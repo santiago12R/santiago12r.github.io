@@ -4,155 +4,552 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Santiago Rodriguez Jimenez · Ingeniería de Software</title>
-<meta name="description" content="Portafolio de Santiago Rodriguez Jimenez, estudiante de Ingeniería de Software en Medellín. Full stack y analítica de datos. Buscando práctica empresarial.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><rect width='8' height='8' fill='%230b1120'/><path d='M2 1h4v1H2zM1 2h1v2H1zM2 4h4v1H2zM6 5h1v2H6zM2 7h4v-1H2z' fill='%237dd3fc'/></svg>">
+<meta name="description" content="Portafolio de Santiago Rodriguez Jimenez, estudiante de Ingeniería de Software en Medellín. Full stack y analítica de datos. Disponible para práctica empresarial.">
+<meta name="theme-color" content="#0b0f1d">
+<meta property="og:title" content="Santiago Rodriguez Jimenez · Portafolio">
+<meta property="og:description" content="Estudiante de Ingeniería de Software · Full Stack & Datos · Buscando práctica empresarial">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'><rect width='8' height='8' fill='%230b0f1d'/><rect x='2' y='1' width='4' height='2' fill='%23241a14'/><rect x='2' y='3' width='4' height='2' fill='%23e8b894'/><rect x='1' y='5' width='6' height='3' fill='%237dd3fc'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 <style>
-:root{--bg0:#06090f;--bg1:#0b1120;--panel:#0e1525;--panel2:#141d33;--borde:#2a3b5f;--crema:#f5f1ea;--rosa:#a78bfa;--cian:#7dd3fc;--gema:#5ee6e0;--amar:#ffe066;--verde:#7ee08a;--gris:#93a4bf}
+:root{
+ --bg:#0b0f1d;--bg2:#121832;--panel:#161d3a;--panel2:#1d2650;--borde:#3a4a8a;--sombra:#05070e;
+ --txt:#f2ecdf;--suave:#9aa6cc;--cian:#7dd3fc;--rosa:#c4a2ff;--amar:#ffd84d;--verde:#7ee08a;--rojo:#ff6b6b;--naranja:#ffa94d;
+ --px:"Press Start 2P",monospace;--vt:"VT323",ui-monospace,monospace;
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg1);color:var(--crema);font-family:ui-monospace,"JetBrains Mono","Cascadia Code",Menlo,Consolas,monospace;line-height:1.6;
- background-image:radial-gradient(#ffffff14 1px,transparent 1px);background-size:28px 28px}
-a{color:var(--cian);text-decoration:none}
-a:hover{text-decoration:underline}
-.wrap{max-width:980px;margin:0 auto;padding:0 20px}
-nav{position:sticky;top:0;z-index:5;background:#0b1120e6;backdrop-filter:blur(6px);border-bottom:2px solid var(--borde)}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
-nav b{color:var(--cian)}
-nav ul{display:flex;gap:18px;list-style:none;font-size:14px}
-nav ul a{color:var(--gris)}
-header{padding:80px 0 56px}
-.hello{color:var(--gema);font-size:14px;margin-bottom:10px}
-h1{font-size:clamp(30px,6vw,52px);line-height:1.1;letter-spacing:-1px}
-h1 span{display:block;width:fit-content;border-bottom:6px solid var(--rosa);padding-bottom:6px}
-.role{color:var(--rosa);font-size:clamp(16px,2.4vw,21px);margin-top:16px}
-.lead{color:var(--gris);max-width:640px;margin-top:18px}
-.lead em{color:var(--crema);font-style:normal}
-.status{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:6px 12px;border:2px solid var(--verde);color:var(--verde);font-size:13px}
-.status:before{content:"";width:8px;height:8px;background:var(--verde);animation:blink 1.2s steps(2) infinite}
+body{background:var(--bg);color:var(--txt);font-family:var(--vt);font-size:22px;line-height:1.3;overflow-x:hidden;
+ background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:24px 24px}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px);z-index:50}
+a{color:var(--cian)}
+img,svg{image-rendering:pixelated}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--amar);color:#000;padding:8px;z-index:60;font-family:var(--px);font-size:10px}
+.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--amar);outline-offset:3px}
+
+/* ===== pixel boxes ===== */
+.box{background:var(--panel);border:4px solid var(--txt);box-shadow:0 0 0 4px var(--sombra),8px 8px 0 4px var(--sombra);position:relative}
+.box.alt{border-color:var(--borde)}
+.btn{font-family:var(--px);font-size:11px;display:inline-flex;align-items:center;gap:10px;padding:14px 18px;background:var(--panel2);color:var(--txt);border:3px solid var(--txt);box-shadow:4px 4px 0 var(--sombra);cursor:pointer;text-decoration:none;text-transform:uppercase;letter-spacing:.5px;transition:transform .06s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--sombra)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--sombra)}
+.btn.a{background:var(--amar);color:#1a1300;border-color:#1a1300}
+.btn.b{background:var(--rosa);color:#150b2b;border-color:#150b2b}
+.btn.sm{font-size:9px;padding:9px 12px}
+
+/* ===== HUD ===== */
+.hud{position:sticky;top:0;z-index:40;background:#0b0f1df2;border-bottom:4px solid var(--txt);box-shadow:0 4px 0 var(--sombra)}
+.hud .wrap{display:flex;align-items:center;gap:18px;height:64px}
+.hud .who{font-family:var(--px);font-size:10px;white-space:nowrap}
+.hud .who b{color:var(--amar)}
+.bars{display:flex;flex-direction:column;gap:4px;min-width:150px}
+.bar{display:flex;align-items:center;gap:6px;font-family:var(--px);font-size:7px;color:var(--suave)}
+.bar i{display:block;height:8px;flex:1;background:#000;border:2px solid var(--txt);position:relative}
+.bar i:after{content:"";position:absolute;inset:0;width:var(--v);background:var(--c)}
+.hud nav{margin-left:auto}
+.hud ul{display:flex;gap:4px;list-style:none}
+.hud ul a{font-family:var(--px);font-size:9px;color:var(--txt);text-decoration:none;padding:8px 8px;display:block}
+.hud ul a:hover,.hud ul a.on{color:var(--amar)}
+.hud ul a:hover:before,.hud ul a.on:before{content:"▶ ";}
+.menu-btn{display:none;margin-left:auto}
+@media(max-width:900px){.hud ul{display:none;position:absolute;top:64px;right:12px;flex-direction:column;background:var(--panel);border:4px solid var(--txt);box-shadow:6px 6px 0 var(--sombra);padding:8px}
+ .hud ul.open{display:flex}.menu-btn{display:inline-flex}.bars{display:none}}
+
+/* ===== title screen ===== */
+.title{min-height:calc(100vh - 64px);display:grid;place-items:center;padding:60px 0 40px;position:relative;overflow:hidden}
+.stars i{position:absolute;width:4px;height:4px;background:var(--txt);opacity:.6;animation:tw 2s steps(2) infinite}
+@keyframes tw{50%{opacity:.1}}
+.title-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:40px;align-items:center}
+.press{font-family:var(--px);font-size:10px;color:var(--verde);display:inline-flex;gap:10px;align-items:center;border:3px solid var(--verde);padding:8px 12px;margin-bottom:22px}
+.press:before{content:"";width:10px;height:10px;background:var(--verde);animation:blink 1s steps(2) infinite}
 @keyframes blink{50%{opacity:0}}
-.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.btn{display:inline-block;padding:10px 18px;border:2px solid var(--borde);background:var(--panel2);color:var(--crema);font-weight:700;font-size:14px;box-shadow:4px 4px 0 var(--bg0);transition:transform .08s}
-.btn:hover{text-decoration:none;transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--bg0)}
-.btn.main{background:var(--rosa);border-color:var(--rosa);color:var(--bg0)}
-section{padding:56px 0;border-top:2px dashed var(--borde)}
-h2{font-size:22px;margin-bottom:26px;color:var(--crema)}
-h2:before{content:"> ";color:var(--gema)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-.card{background:var(--panel);border:2px solid var(--borde);padding:20px;box-shadow:6px 6px 0 var(--bg0);display:flex;flex-direction:column}
-.card h3{font-size:17px;color:var(--crema)}
-.tag{font-size:12px;color:var(--amar);margin:2px 0 10px}
-.card p{color:var(--gris);font-size:14px}
-.card .chips{margin-top:auto;padding-top:12px}
-.card .rol{color:var(--crema);margin-top:10px;font-size:13px}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.chip{font-size:11px;padding:2px 8px;border:1px solid var(--borde);color:var(--cian);background:var(--panel2)}
-.links{display:flex;gap:14px;margin-top:14px;font-size:13px}
-.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
-.stack>div{background:var(--panel);border:2px solid var(--borde);padding:16px}
-.stack h3{font-size:13px;color:var(--amar);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
-.cert{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
-.cert a{display:block;background:var(--panel);border:2px solid var(--borde);padding:12px 14px;color:var(--crema);font-size:14px}
-.cert a small{display:block;color:var(--gris);font-size:12px}
-.cert a:hover{border-color:var(--cian);text-decoration:none}
-.edu{background:var(--panel);border:2px solid var(--borde);padding:20px}
-.edu b{color:var(--crema)}.edu p{color:var(--gris);font-size:14px}
-footer{padding:48px 0 60px;border-top:2px dashed var(--borde);text-align:center;color:var(--gris);font-size:14px}
-footer .btns{justify-content:center}
-@media(max-width:640px){nav ul{display:none}header{padding:56px 0 40px}}
+h1{font-family:var(--px);font-size:clamp(22px,4.2vw,42px);line-height:1.35;text-shadow:4px 4px 0 var(--sombra)}
+h1 span{color:var(--amar)}
+.cls{font-family:var(--px);font-size:clamp(10px,1.4vw,13px);color:var(--rosa);margin:18px 0 22px;line-height:1.8}
+.dialog{padding:18px 20px 22px;font-size:24px;min-height:120px}
+.dialog .who{position:absolute;top:-18px;left:16px;background:var(--amar);color:#1a1300;font-family:var(--px);font-size:9px;padding:6px 10px;border:3px solid #1a1300}
+.dialog .next{position:absolute;right:14px;bottom:8px;color:var(--amar);animation:bob .8s steps(2) infinite;font-size:18px}
+@keyframes bob{50%{transform:translateY(4px)}}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+.stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+.stat{padding:12px 14px;text-decoration:none;color:var(--txt);display:flex;gap:10px;align-items:baseline;border:3px solid var(--borde);background:var(--bg2)}
+.stat b{font-family:var(--px);font-size:16px;color:var(--cian)}
+.stat:hover{border-color:var(--amar)}
+.stat:hover b{color:var(--amar)}
+.hero-art{display:grid;place-items:center;gap:16px}
+.hero-art .pj{width:min(300px,70vw);filter:drop-shadow(8px 8px 0 var(--sombra));animation:idle 1.2s steps(2) infinite}
+@keyframes idle{50%{transform:translateY(-6px)}}
+.hero-art .ground{width:min(320px,74vw);height:12px;background:var(--verde);box-shadow:0 12px 0 #3d7a45}
+.hint{font-family:var(--px);font-size:8px;color:var(--suave);text-align:center}
+@media(max-width:820px){.title-grid{grid-template-columns:1fr}.hero-art{order:-1}.hero-art .pj{width:180px}}
+
+/* ===== sections ===== */
+section{padding:80px 0;position:relative}
+.sec-head{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:34px}
+.sec-head .n{font-family:var(--px);font-size:11px;color:var(--bg);background:var(--cian);padding:8px 10px}
+h2{font-family:var(--px);font-size:clamp(16px,2.6vw,24px);text-shadow:3px 3px 0 var(--sombra)}
+.sec-head p{width:100%;color:var(--suave);font-size:22px}
+
+/* quests */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.filters button{font-family:var(--px);font-size:9px;background:var(--bg2);color:var(--suave);border:3px solid var(--borde);padding:9px 12px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--amar);color:#1a1300;border-color:#1a1300}
+.quests{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px}
+.quest{padding:20px;display:flex;flex-direction:column;gap:10px}
+.quest[hidden]{display:none}
+.q-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.q-ico{width:48px;height:48px;flex:none}
+.badge{font-family:var(--px);font-size:7px;padding:6px 8px;border:2px solid currentColor;white-space:nowrap}
+.b-done{color:var(--verde)}.b-live{color:var(--amar)}.b-wip{color:var(--naranja)}
+.quest h3{font-family:var(--px);font-size:12px;line-height:1.6}
+.quest .tipo{color:var(--rosa);font-size:20px}
+.quest p{color:var(--suave)}
+.loot{display:flex;flex-wrap:wrap;gap:6px}
+.loot span{font-size:18px;padding:0 8px;border:2px solid var(--borde);color:var(--cian);background:var(--bg2)}
+.q-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+details.more summary{list-style:none;cursor:pointer;font-family:var(--px);font-size:9px;color:var(--amar)}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary:before{content:"▶ "}
+details.more[open] summary:before{content:"▼ "}
+details.more dl{margin-top:10px;display:grid;gap:6px}
+details.more dt{font-family:var(--px);font-size:8px;color:var(--cian);margin-top:6px}
+details.more dd{color:var(--txt)}
+
+/* inventory */
+.inv{display:grid;grid-template-columns:1fr 340px;gap:26px}
+.cats{display:grid;gap:20px}
+.cat h3{font-family:var(--px);font-size:10px;color:var(--amar);margin-bottom:12px}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px}
+.slot{min-height:96px;background:var(--bg2);border:3px solid var(--borde);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;color:var(--txt);font-family:var(--vt);font-size:19px;padding:6px;text-align:center}
+.slot .ic{font-family:var(--px);font-size:13px;width:38px;height:38px;display:grid;place-items:center;color:#0b0f1d;background:var(--c,var(--cian));box-shadow:3px 3px 0 var(--sombra)}
+.slot:hover,.slot[aria-pressed=true]{border-color:var(--amar);background:var(--panel2)}
+.detail{padding:20px;position:sticky;top:90px;align-self:start}
+.detail h3{font-family:var(--px);font-size:12px;color:var(--amar);margin-bottom:12px}
+.detail .lbl{font-family:var(--px);font-size:8px;color:var(--cian);margin:14px 0 6px}
+.detail ul{list-style:none}
+.detail li:before{content:"◆ ";color:var(--rosa)}
+@media(max-width:820px){.inv{grid-template-columns:1fr}.detail{position:static}}
+
+/* achievements */
+.ach{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.trophy{display:flex;gap:14px;align-items:center;padding:16px;text-decoration:none;color:var(--txt);background:var(--bg2);border:3px solid var(--borde);box-shadow:5px 5px 0 var(--sombra)}
+.trophy:hover{border-color:var(--amar);transform:translate(-2px,-2px)}
+.trophy .t-ico{width:44px;height:44px;flex:none}
+.trophy b{display:block;font-family:var(--px);font-size:9px;line-height:1.6}
+.trophy small{color:var(--suave);font-size:18px}
+.trophy .unl{font-family:var(--px);font-size:7px;color:var(--verde)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,150%);background:var(--panel);border:4px solid var(--amar);box-shadow:6px 6px 0 var(--sombra);padding:12px 16px;font-family:var(--px);font-size:10px;z-index:70;transition:transform .25s steps(4);display:flex;gap:10px;align-items:center}
+.toast.show{transform:translate(-50%,0)}
+
+/* map */
+.map{padding:30px 24px}
+.path{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative}
+.path:before{content:"";position:absolute;left:8%;right:8%;top:30px;height:8px;background:repeating-linear-gradient(90deg,var(--txt) 0 12px,transparent 12px 20px)}
+.stop{position:relative;text-align:center;padding:0 6px}
+.stop .node{width:60px;height:60px;margin:0 auto 14px;display:grid;place-items:center;font-family:var(--px);font-size:10px;background:var(--verde);color:#0b1a0e;border:4px solid var(--txt);box-shadow:4px 4px 0 var(--sombra);position:relative;z-index:1}
+.stop.now .node{background:var(--amar);color:#1a1300;animation:pulse 1s steps(2) infinite}
+.stop.next .node{background:var(--bg2);color:var(--suave);border-style:dashed}
+@keyframes pulse{50%{box-shadow:0 0 0 6px var(--amar)}}
+.stop b{font-family:var(--px);font-size:9px;display:block;margin-bottom:6px;color:var(--amar)}
+.stop span{color:var(--suave);font-size:19px;display:block}
+.stop.now b:after{content:" ◀ TÚ ESTÁS AQUÍ";color:var(--verde);display:block;font-size:7px;margin-top:6px}
+@media(max-width:820px){.path{grid-template-columns:1fr;gap:18px}.path:before{left:28px;right:auto;top:0;bottom:0;width:8px;height:auto;background:repeating-linear-gradient(180deg,var(--txt) 0 12px,transparent 12px 20px)}
+ .stop{display:grid;grid-template-columns:60px 1fr;gap:16px;text-align:left;align-items:center}.stop .node{margin:0}}
+
+/* character sheet */
+.sheet{display:grid;grid-template-columns:300px 1fr;gap:26px}
+.card3d{perspective:900px}
+.flip{position:relative;width:100%;aspect-ratio:3/4;transition:transform .6s steps(6);transform-style:preserve-3d}
+.flip.on{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;padding:18px;display:flex;flex-direction:column;gap:10px}
+.face.back{transform:rotateY(180deg)}
+.face h3{font-family:var(--px);font-size:11px;color:var(--amar)}
+.face .kv{display:flex;justify-content:space-between;border-bottom:2px dotted var(--borde);font-size:20px}
+.face .kv b{color:var(--cian);font-weight:normal}
+.perks{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.perk{padding:16px;background:var(--bg2);border:3px solid var(--borde)}
+.perk b{font-family:var(--px);font-size:9px;color:var(--verde);display:block;margin-bottom:8px;line-height:1.6}
+.perk p{color:var(--suave)}
+.bio{font-size:23px;margin-bottom:20px}
+@media(max-width:820px){.sheet{grid-template-columns:1fr}.card3d{max-width:300px}}
+
+/* save / contact */
+.save{padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.slotsave{border:3px solid var(--borde);background:var(--bg2);padding:14px;display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.slotsave b{font-family:var(--px);font-size:9px;color:var(--amar)}
+.slotsave span{color:var(--suave)}
+.mail{font-size:24px;word-break:break-all}
+@media(max-width:820px){.save{grid-template-columns:1fr}}
+
+footer{border-top:4px solid var(--txt);padding:40px 0 60px;text-align:center}
+footer p{color:var(--suave)}
+footer .px{font-family:var(--px);font-size:10px;color:var(--txt);margin-bottom:16px}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .4s steps(4),transform .4s steps(4)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><b>santiago12R</b>
- <ul><li><a href="#proyectos">Proyectos</a></li><li><a href="#stack">Stack</a></li><li><a href="#certificaciones">Certificaciones</a></li><li><a href="#contacto">Contacto</a></li></ul></div></nav>
+<a class="skip" href="#misiones">Saltar al contenido</a>
 
-<header><div class="wrap">
- <p class="hello">$ whoami</p>
- <h1><span>Santiago Rodriguez Jimenez</span></h1>
- <p class="role">Ingeniería de Software · Full Stack &amp; Datos</p>
- <p class="lead">Estudiante de <em>VII semestre</em> en la Universidad Cooperativa de Colombia, en Medellín. Construyo sitios web con <em>HTML, CSS, JavaScript y React</em>, apps móviles con <em>Flutter</em> y backends con <em>Java, Spring Boot y Python</em>, siempre trabajando en equipo.</p>
- <p class="status">Disponible para práctica empresarial · presencial, híbrida o remota</p>
- <div class="btns">
-  <a class="btn main" href="https://github.com/santiago12R/santiago12R/raw/main/Santiago_Rodriguez_CV.pdf">Hoja de vida · PDF</a>
-  <a class="btn" href="https://www.linkedin.com/in/santiago12r/">LinkedIn</a>
-  <a class="btn" href="https://github.com/santiago12R">GitHub</a>
-  <a class="btn" href="mailto:santiago.rodriguezj12@gmail.com">Correo</a>
+<header class="hud">
+ <div class="wrap">
+  <div class="who">P1 <b>SANTIAGO</b> · LV 7</div>
+  <div class="bars" aria-hidden="true">
+   <div class="bar">HP<i style="--v:100%;--c:var(--rojo)"></i></div>
+   <div class="bar">XP<i style="--v:70%;--c:var(--cian)"></i></div>
+  </div>
+  <nav aria-label="Secciones">
+   <ul id="menu">
+    <li><a href="#misiones">Misiones</a></li>
+    <li><a href="#inventario">Inventario</a></li>
+    <li><a href="#logros">Logros</a></li>
+    <li><a href="#mapa">Mapa</a></li>
+    <li><a href="#personaje">Personaje</a></li>
+    <li><a href="#guardar">Contacto</a></li>
+   </ul>
+  </nav>
+  <button class="btn sm menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menú</button>
  </div>
-</div></header>
+</header>
 
-<section id="proyectos"><div class="wrap">
- <h2>Proyectos</h2>
- <div class="grid">
-  <article class="card"><h3>Casa Rendón</h3><p class="tag">Cliente real · en producción · 2026</p>
-   <p>Sitio web de una marca de café y vino de Andes, Antioquia: 7 secciones y reservas por WhatsApp.</p>
-   <p class="rol">Mi rol: maquetación, interactividad y componentes en React.</p>
-   <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">React</span></div>
-   <div class="links"><a href="https://casarendon.com">Ver sitio ↗</a><a href="https://github.com/AlexanderM-Code/Entre-sorbos---Casa-Rendon">Código</a></div></article>
+<main>
+<!-- ===== TITLE SCREEN ===== -->
+<section class="title" aria-label="Inicio">
+ <div class="stars" aria-hidden="true" id="stars"></div>
+ <div class="wrap title-grid">
+  <div>
+   <p class="press">Buscando party: práctica empresarial</p>
+   <h1>SANTIAGO<br><span>RODRIGUEZ</span> JIMENEZ</h1>
+   <p class="cls">Clase: Ingeniero de Software<br>Especialidad: Full Stack &amp; Datos · Medellín</p>
 
-  <article class="card"><h3>Numi</h3><p class="tag">App educativa · en desarrollo · 2026</p>
-   <p>App para niños de primaria de zonas rurales de Medellín: 15 actividades en 5 materias y funcionamiento sin internet.</p>
-   <p class="rol">Mi rol: pantallas, diseño responsive, juegos interactivos y documentación.</p>
-   <div class="chips"><span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">MVVM</span></div>
-   <div class="links"><a href="https://github.com/geminitodo5-sketch/app-educativa-medellin">Código</a></div></article>
+   <div class="box dialog" role="status" aria-live="polite">
+    <span class="who">SANTIAGO</span>
+    <p id="typed">Estudiante de VII semestre. Construyo sitios web, apps móviles y backends, siempre en equipo. ¿Me ayudas a desbloquear mi siguiente nivel?</p>
+    <span class="next" aria-hidden="true">▼</span>
+   </div>
 
-  <article class="card"><h3>BlackJack Royale</h3><p class="tag">Casino web multijugador · 2025</p>
-   <p>Modo contra la máquina y multijugador en tiempo real por WebSockets, con 6 módulos de JavaScript y servidor en Python.</p>
-   <p class="rol">Mi rol: front-end y servidor.</p>
-   <div class="chips"><span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">WebSockets</span></div>
-   <div class="links"><a href="https://luism7p7.github.io/BlackJack/Casino/public/">Jugar ↗</a><a href="https://github.com/luism7p7/BlackJack">Código</a></div></article>
+   <div class="cta">
+    <a class="btn a" href="#misiones">▶ Press Start</a>
+    <a class="btn" href="https://github.com/santiago12R/santiago12R/raw/main/Santiago_Rodriguez_CV.pdf">⬇ Hoja de vida</a>
+   </div>
 
-  <article class="card"><h3>CineX</h3><p class="tag">API REST · 2025</p>
-   <p>API REST para gestionar un cine, con 8 clases de servicio.</p>
-   <p class="rol">Mi rol: capa de servicios con la lógica de negocio.</p>
-   <div class="chips"><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">MySQL</span></div>
-   <div class="links"><a href="https://github.com/AlexanderM-Code/CineX-Backend">Código</a></div></article>
+   <div class="stats">
+    <a class="stat" href="#misiones"><b>6</b> misiones</a>
+    <a class="stat" href="#logros"><b>5</b> logros</a>
+    <a class="stat" href="#misiones" data-filter="live"><b>1</b> cliente real</a>
+   </div>
+  </div>
 
-  <article class="card"><h3>Gafas de detección de proximidad</h3><p class="tag">Arduino · proyecto final · 2025</p>
-   <p>Gafas que detectan obstáculos con un sensor ultrasónico y avisan con alertas sonoras, como apoyo a personas con limitación visual.</p>
-   <p class="rol">Proyecto en pareja de Computación Ubicua, junto con laboratorios de sensores y un carro robot.</p>
-   <div class="chips"><span class="chip">Arduino</span><span class="chip">C/C++</span><span class="chip">Sensores</span></div>
-   <div class="links"><a href="https://youtu.be/G-rosUWGhHM">Video ↗</a><a href="https://github.com/santiago12R/Computacion-ubicua">Código</a></div></article>
-
-  <article class="card"><h3>Numi Admin</h3><p class="tag">Panel web · en desarrollo · 2026</p>
-   <p>Panel para que administradores y coordinadores gestionen usuarios, contenido educativo y el progreso de los estudiantes de Numi, sobre Firestore.</p>
-   <p class="rol">Proyecto integrador de Desarrollo Web Full Stack.</p>
-   <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">JavaScript</span><span class="chip">Firestore</span></div></article>
+  <div class="hero-art">
+   <svg class="pj" id="pj" viewBox="0 0 16 20" shape-rendering="crispEdges" role="img" aria-label="Personaje pixel de Santiago">
+    <!-- hair -->
+    <rect x="4" y="1" width="8" height="1" fill="#1b1410"/><rect x="3" y="2" width="10" height="2" fill="#1b1410"/><rect x="3" y="4" width="2" height="2" fill="#1b1410"/><rect x="11" y="4" width="2" height="1" fill="#1b1410"/><rect x="9" y="2" width="3" height="1" fill="#2c221b"/>
+    <!-- face -->
+    <rect x="5" y="4" width="6" height="5" fill="#e3b08d"/><rect x="4" y="6" width="1" height="2" fill="#e3b08d"/><rect x="11" y="5" width="1" height="3" fill="#e3b08d"/>
+    <rect x="6" y="6" width="1" height="1" fill="#2a1a12" class="eye"/><rect x="9" y="6" width="1" height="1" fill="#2a1a12" class="eye"/>
+    <rect x="6" y="5" width="2" height="1" fill="#1b1410"/><rect x="9" y="5" width="2" height="1" fill="#1b1410"/>
+    <rect x="7" y="8" width="2" height="1" fill="#b7826a"/>
+    <rect x="7" y="9" width="2" height="1" fill="#c99677"/>
+    <!-- shirt -->
+    <rect x="4" y="10" width="8" height="6" fill="#16161d"/><rect x="3" y="11" width="1" height="4" fill="#16161d"/><rect x="12" y="11" width="1" height="4" fill="#16161d"/>
+    <rect x="7" y="10" width="2" height="1" fill="#2a2a36"/>
+    <rect x="2" y="14" width="1" height="2" fill="#e3b08d"/><rect x="13" y="14" width="1" height="2" fill="#e3b08d"/>
+    <!-- laptop -->
+    <rect x="5" y="13" width="6" height="3" fill="#7dd3fc"/><rect x="6" y="14" width="1" height="1" fill="#0b0f1d"/><rect x="8" y="14" width="2" height="1" fill="#0b0f1d"/>
+    <rect x="4" y="16" width="8" height="1" fill="#9aa6cc"/>
+    <!-- legs -->
+    <rect x="5" y="17" width="2" height="2" fill="#2d3a6b"/><rect x="9" y="17" width="2" height="2" fill="#2d3a6b"/>
+    <rect x="4" y="19" width="3" height="1" fill="#f2ecdf"/><rect x="9" y="19" width="3" height="1" fill="#f2ecdf"/>
+   </svg>
+   <div class="ground" aria-hidden="true"></div>
+   <p class="hint">haz clic en el personaje</p>
+  </div>
  </div>
-</div></section>
+</section>
 
-<section id="stack"><div class="wrap">
- <h2>Stack</h2>
- <div class="stack">
-  <div><h3>Front-end</h3><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">React</span><span class="chip">Bootstrap</span></div></div>
-  <div><h3>Back-end y datos</h3><div class="chips"><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">MySQL</span><span class="chip">API REST</span></div></div>
-  <div><h3>Móvil</h3><div class="chips"><span class="chip">Flutter</span><span class="chip">Dart</span></div></div>
-  <div><h3>Herramientas</h3><div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span><span class="chip">Postman</span><span class="chip">Docker</span><span class="chip">Google Cloud</span></div></div>
+<!-- ===== QUESTS ===== -->
+<section id="misiones">
+ <div class="wrap">
+  <div class="sec-head"><span class="n">01</span><h2>Misiones</h2><p>Proyectos completados y en curso. Abre cada misión para ver el objetivo, mi rol y el resultado.</p></div>
+  <div class="filters" role="group" aria-label="Filtrar misiones">
+   <button aria-pressed="true" data-f="all">Todas</button>
+   <button aria-pressed="false" data-f="live">Cliente real</button>
+   <button aria-pressed="false" data-f="done">Completadas</button>
+   <button aria-pressed="false" data-f="wip">En curso</button>
+  </div>
+  <div class="quests" id="quests">
+
+   <article class="box quest reveal" data-s="live done">
+    <div class="q-top"><svg class="q-ico" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="2" width="5" height="5" fill="#f2ecdf"/><rect x="6" y="3" width="1" height="3" fill="#f2ecdf"/><rect x="2" y="3" width="3" height="2" fill="#7a4a2a"/><rect x="2" y="0" width="1" height="1" fill="#9aa6cc"/><rect x="4" y="1" width="1" height="1" fill="#9aa6cc"/></svg><span class="badge b-live">★ Cliente real</span></div>
+    <h3>Casa Rendón</h3><p class="tipo">Sitio web en producción · 2026</p>
+    <p>Sitio de una marca de café y vino de Andes, Antioquia: 7 secciones y reservas por WhatsApp.</p>
+    <div class="loot"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span></div>
+    <details class="more"><summary>Ver misión</summary><dl>
+     <dt>Objetivo</dt><dd>Darle presencia digital a la marca: contar su historia, mostrar sus productos y facilitar las reservas.</dd>
+     <dt>Mi rol</dt><dd>Maquetación con HTML y CSS, interactividad con JavaScript y componentes en React.</dd>
+     <dt>Recompensa</dt><dd>Sitio en producción en casarendon.com, usado por un cliente real.</dd>
+     <dt>Lo que aprendí</dt><dd>Trabajar en equipo con Git y adaptar el diseño a lo que el cliente necesitaba de verdad.</dd>
+    </dl></details>
+    <div class="q-actions"><a class="btn sm a" href="https://casarendon.com">Ver sitio ↗</a><a class="btn sm" href="https://github.com/santiago12R/casa-rendon">Código</a></div>
+   </article>
+
+   <article class="box quest reveal" data-s="wip">
+    <div class="q-top"><svg class="q-ico" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="2" y="0" width="4" height="8" fill="#9aa6cc"/><rect x="2" y="1" width="4" height="5" fill="#7ee08a"/><rect x="3" y="7" width="2" height="1" fill="#0b0f1d"/><rect x="3" y="2" width="1" height="1" fill="#ffd84d"/><rect x="4" y="4" width="1" height="1" fill="#ffd84d"/></svg><span class="badge b-wip">… En curso</span></div>
+    <h3>Numi</h3><p class="tipo">App educativa móvil · 2026</p>
+    <p>App para niños de primaria de zonas rurales de Medellín: 15 actividades en 5 materias y funcionamiento sin internet.</p>
+    <div class="loot"><span>Flutter</span><span>Dart</span><span>MVVM</span></div>
+    <details class="more"><summary>Ver misión</summary><dl>
+     <dt>Objetivo</dt><dd>Llevar actividades de matemáticas, ciencias, inglés y castellano a colegios con poca conexión.</dd>
+     <dt>Mi rol</dt><dd>Pantallas de matemáticas, diseño responsive, juegos de arrastrar y soltar con audio, manual de usuario y documentación técnica.</dd>
+     <dt>Party</dt><dd>Equipo de 4 personas con arquitectura MVVM.</dd>
+    </dl></details>
+    <div class="q-actions"><a class="btn sm" href="https://github.com/geminitodo5-sketch/app-educativa-medellin">Código</a></div>
+   </article>
+
+   <article class="box quest reveal" data-s="done">
+    <div class="q-top"><svg class="q-ico" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="0" y="1" width="4" height="6" fill="#f2ecdf"/><rect x="4" y="0" width="4" height="6" fill="#f2ecdf"/><rect x="1" y="2" width="1" height="1" fill="#ff6b6b"/><rect x="5" y="1" width="1" height="1" fill="#16161d"/><rect x="2" y="5" width="1" height="1" fill="#ff6b6b"/><rect x="6" y="4" width="1" height="1" fill="#16161d"/></svg><span class="badge b-done">✓ Completada</span></div>
+    <h3>BlackJack Royale</h3><p class="tipo">Casino web multijugador · 2025</p>
+    <p>Modo contra la máquina y multijugador en tiempo real por WebSockets, con 6 módulos de JavaScript y servidor en Python.</p>
+    <div class="loot"><span>JavaScript</span><span>Python</span><span>WebSockets</span></div>
+    <details class="more"><summary>Ver misión</summary><dl>
+     <dt>Objetivo</dt><dd>Un casino web donde varias personas juegan la misma partida en tiempo real.</dd>
+     <dt>Mi rol</dt><dd>Front-end y servidor.</dd>
+     <dt>Recompensa</dt><dd>Juego publicado y jugable en el navegador.</dd>
+    </dl></details>
+    <div class="q-actions"><a class="btn sm a" href="https://luism7p7.github.io/BlackJack/Casino/public/">Jugar ↗</a><a class="btn sm" href="https://github.com/santiago12R/BlackJack">Código</a></div>
+   </article>
+
+   <article class="box quest reveal" data-s="done">
+    <div class="q-top"><svg class="q-ico" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="0" y="2" width="8" height="5" fill="#c4a2ff"/><rect x="1" y="3" width="6" height="3" fill="#0b0f1d"/><rect x="0" y="0" width="2" height="2" fill="#f2ecdf"/><rect x="3" y="0" width="2" height="2" fill="#f2ecdf"/><rect x="6" y="0" width="2" height="2" fill="#f2ecdf"/><rect x="3" y="4" width="2" height="1" fill="#ffd84d"/></svg><span class="badge b-done">✓ Completada</span></div>
+    <h3>CineX</h3><p class="tipo">API REST · 2025</p>
+    <p>API REST para gestionar un cine, con 8 clases de servicio.</p>
+    <div class="loot"><span>Java</span><span>Spring Boot</span><span>MySQL</span></div>
+    <details class="more"><summary>Ver misión</summary><dl>
+     <dt>Objetivo</dt><dd>Un backend que gestione la operación de un cine a través de una API REST.</dd>
+     <dt>Mi rol</dt><dd>La capa de servicios con la lógica de negocio.</dd>
+    </dl></details>
+    <div class="q-actions"><a class="btn sm" href="https://github.com/AlexanderM-Code/CineX-Backend">Código</a></div>
+   </article>
+
+   <article class="box quest reveal" data-s="done">
+    <div class="q-top"><svg class="q-ico" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="0" y="3" width="8" height="2" fill="#16161d"/><rect x="1" y="2" width="2" height="4" fill="#7dd3fc"/><rect x="5" y="2" width="2" height="4" fill="#7dd3fc"/><rect x="3" y="3" width="2" height="1" fill="#9aa6cc"/><rect x="2" y="0" width="1" height="1" fill="#ffd84d"/><rect x="6" y="0" width="1" height="1" fill="#ffd84d"/></svg><span class="badge b-done">✓ Completada</span></div>
+    <h3>Gafas de detección de proximidad</h3><p class="tipo">Arduino · proyecto final · 2025</p>
+    <p>Gafas que detectan obstáculos con un sensor ultrasónico y avisan con alertas sonoras, como apoyo a personas con limitación visual.</p>
+    <div class="loot"><span>Arduino</span><span>C/C++</span><span>Sensores</span></div>
+    <details class="more"><summary>Ver misión</summary><dl>
+     <dt>Objetivo</dt><dd>Apoyar la movilidad de personas con limitación visual con un dispositivo de bajo costo.</dd>
+     <dt>Equipo</dt><dd>Proyecto en pareja de Computación Ubicua, junto con 7 laboratorios de sensores y un carro robot a control remoto.</dd>
+     <dt>Materiales</dt><dd>Arduino Nano, sensor ultrasónico, buzzer y batería de litio recargable.</dd>
+    </dl></details>
+    <div class="q-actions"><a class="btn sm a" href="https://youtu.be/G-rosUWGhHM">Video ↗</a><a class="btn sm" href="https://github.com/santiago12R/Computacion-ubicua">Código</a></div>
+   </article>
+
+   <article class="box quest reveal" data-s="wip">
+    <div class="q-top"><svg class="q-ico" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="0" y="1" width="8" height="6" fill="#9aa6cc"/><rect x="1" y="2" width="6" height="4" fill="#0b0f1d"/><rect x="1" y="4" width="1" height="2" fill="#7ee08a"/><rect x="3" y="3" width="1" height="3" fill="#7dd3fc"/><rect x="5" y="2" width="1" height="4" fill="#ffd84d"/></svg><span class="badge b-wip">… En curso</span></div>
+    <h3>Numi Admin</h3><p class="tipo">Panel web administrativo · 2026</p>
+    <p>Panel para gestionar usuarios, roles, contenido educativo y el progreso de los estudiantes de Numi, sobre los datos de Firestore.</p>
+    <div class="loot"><span>Python</span><span>Flask</span><span>JavaScript</span><span>Firestore</span></div>
+    <details class="more"><summary>Ver misión</summary><dl>
+     <dt>Objetivo</dt><dd>Darle a coordinadores y administradores una herramienta web que Numi no tenía.</dd>
+     <dt>Reglas</dt><dd>No modificar la app móvil ni su funcionamiento sin internet; solo leer y gestionar lo que ya se sincroniza.</dd>
+     <dt>Contexto</dt><dd>Proyecto integrador de Desarrollo Web Full Stack, 2026-2.</dd>
+    </dl></details>
+   </article>
+
+  </div>
  </div>
-</div></section>
+</section>
 
-<section id="certificaciones"><div class="wrap">
- <h2>Certificaciones</h2>
- <div class="cert">
-  <a href="https://github.com/santiago12R/santiago12R/blob/main/assets/certificados/hacker-etico-cisco.pdf">Hacker ético<small>Cisco Networking Academy · nov 2026</small></a>
-  <a href="https://www.skills.google/public_profiles/d2cda74b-8293-4ec6-94de-48ceadedb950/badges/23162887">Cloud Computing Fundamentals<small>Google Cloud Skills Boost</small></a>
-  <a href="https://www.skills.google/public_profiles/d2cda74b-8293-4ec6-94de-48ceadedb950/badges/23588126">Infrastructure in Google Cloud<small>Google Cloud Skills Boost</small></a>
-  <a href="https://www.skills.google/public_profiles/d2cda74b-8293-4ec6-94de-48ceadedb950/badges/23233254">Cloud Load Balancing<small>Google Cloud Skills Boost</small></a>
-  <a href="https://www.skills.google/public_profiles/d2cda74b-8293-4ec6-94de-48ceadedb950/badges/23629566">Set Up an App Dev Environment on Google Cloud<small>Google Cloud Skills Boost</small></a>
+<!-- ===== INVENTORY ===== -->
+<section id="inventario">
+ <div class="wrap">
+  <div class="sec-head"><span class="n">02</span><h2>Inventario</h2><p>Mi stack. Selecciona un objeto para ver en qué misiones lo usé.</p></div>
+  <div class="inv">
+   <div class="cats" id="slots"></div>
+   <aside class="box alt detail" aria-live="polite" id="detail">
+    <h3 id="dName">Selecciona un objeto</h3>
+    <p id="dDesc" style="color:var(--suave)">Haz clic en cualquier casilla del inventario.</p>
+    <p class="lbl" id="dLbl" hidden>Usado en</p>
+    <ul id="dList"></ul>
+   </aside>
+  </div>
  </div>
-</div></section>
+</section>
 
-<section id="educacion"><div class="wrap">
- <h2>Educación</h2>
- <div class="edu"><b>Universidad Cooperativa de Colombia</b><p>Ingeniería de Software · 2023 – actualidad (VII semestre) · Medellín</p></div>
-</div></section>
-
-<footer id="contacto"><div class="wrap">
- <p>¿Tienes una práctica o un proyecto en mente? Escríbeme.</p>
- <div class="btns">
-  <a class="btn main" href="mailto:santiago.rodriguezj12@gmail.com">santiago.rodriguezj12@gmail.com</a>
-  <a class="btn" href="https://www.linkedin.com/in/santiago12r/">LinkedIn</a>
-  <a class="btn" href="https://github.com/santiago12R">GitHub</a>
+<!-- ===== ACHIEVEMENTS ===== -->
+<section id="logros">
+ <div class="wrap">
+  <div class="sec-head"><span class="n">03</span><h2>Logros</h2><p>Certificaciones desbloqueadas. Cada una abre su credencial.</p></div>
+  <div class="ach">
+   <a class="trophy reveal" href="https://github.com/santiago12R/santiago12R/blob/main/assets/certificados/hacker-etico-cisco.pdf"><svg class="t-ico" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="2" y="0" width="4" height="1" fill="#c4a2ff"/><rect x="1" y="1" width="6" height="4" fill="#c4a2ff"/><rect x="2" y="5" width="4" height="1" fill="#c4a2ff"/><rect x="3" y="6" width="2" height="1" fill="#c4a2ff"/><rect x="3" y="2" width="2" height="2" fill="#0b0f1d"/></svg><div><span class="unl">LOGRO DESBLOQUEADO · NOV 2026</span><b>Hacker ético</b><small>Cisco Networking Academy</small></div></a>
+   <a class="trophy reveal" href="https://www.skills.google/public_profiles/d2cda74b-8293-4ec6-94de-48ceadedb950/badges/23162887"><svg class="t-ico" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="2" y="2" width="4" height="3" fill="#7dd3fc"/><rect x="1" y="3" width="6" height="3" fill="#7dd3fc"/><rect x="0" y="4" width="8" height="2" fill="#7dd3fc"/></svg><div><span class="unl">LOGRO DESBLOQUEADO</span><b>Cloud Computing Fundamentals</b><small>Google Cloud Skills Boost</small></div></a>
+   <a class="trophy reveal" href="https://www.skills.google/public_profiles/d2cda74b-8293-4ec6-94de-48ceadedb950/badges/23588126"><svg class="t-ico" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="6" height="2" fill="#7ee08a"/><rect x="1" y="4" width="6" height="2" fill="#7ee08a"/><rect x="2" y="1" width="1" height="1" fill="#0b0f1d"/><rect x="2" y="4" width="1" height="1" fill="#0b0f1d"/></svg><div><span class="unl">LOGRO DESBLOQUEADO</span><b>Infrastructure in Google Cloud</b><small>Google Cloud Skills Boost</small></div></a>
+   <a class="trophy reveal" href="https://www.skills.google/public_profiles/d2cda74b-8293-4ec6-94de-48ceadedb950/badges/23233254"><svg class="t-ico" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="3" y="0" width="2" height="2" fill="#ffd84d"/><rect x="3" y="2" width="2" height="2" fill="#f2ecdf"/><rect x="0" y="4" width="8" height="1" fill="#f2ecdf"/><rect x="0" y="5" width="2" height="2" fill="#ffd84d"/><rect x="3" y="5" width="2" height="2" fill="#ffd84d"/><rect x="6" y="5" width="2" height="2" fill="#ffd84d"/></svg><div><span class="unl">LOGRO DESBLOQUEADO</span><b>Cloud Load Balancing</b><small>Google Cloud Skills Boost</small></div></a>
+   <a class="trophy reveal" href="https://www.skills.google/public_profiles/d2cda74b-8293-4ec6-94de-48ceadedb950/badges/23629566"><svg class="t-ico" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="0" y="1" width="8" height="6" fill="#ffa94d"/><rect x="1" y="2" width="6" height="4" fill="#0b0f1d"/><rect x="2" y="3" width="1" height="1" fill="#7ee08a"/><rect x="3" y="4" width="1" height="1" fill="#7ee08a"/><rect x="4" y="4" width="2" height="1" fill="#f2ecdf"/></svg><div><span class="unl">LOGRO DESBLOQUEADO</span><b>App Dev Environment on Google Cloud</b><small>Google Cloud Skills Boost</small></div></a>
+  </div>
  </div>
- <p style="margin-top:28px;font-size:12px">© 2026 Santiago Rodriguez Jimenez · Medellín, Colombia</p>
-</div></footer>
+</section>
+
+<!-- ===== MAP ===== -->
+<section id="mapa">
+ <div class="wrap">
+  <div class="sec-head"><span class="n">04</span><h2>Mapa del mundo</h2><p>Mi trayectoria, de la primera clase al siguiente nivel.</p></div>
+  <div class="box map">
+   <ol class="path">
+    <li class="stop reveal"><div class="node">1-1</div><div><b>2023</b><span>Empiezo Ingeniería de Software en la U. Cooperativa</span></div></li>
+    <li class="stop reveal"><div class="node">1-2</div><div><b>2024</b><span>Estructuras de datos en Python</span></div></li>
+    <li class="stop reveal"><div class="node">2-1</div><div><b>2025</b><span>BlackJack, CineX y Computación Ubicua</span></div></li>
+    <li class="stop now reveal"><div class="node">2-2</div><div><b>2026</b><span>Casa Rendón, Numi y certificaciones</span></div></li>
+    <li class="stop next reveal"><div class="node">3-1</div><div><b>SIGUE</b><span>Práctica empresarial</span></div></li>
+    <li class="stop next reveal"><div class="node">★</div><div><b>2027</b><span>Fin de la carrera (previsto)</span></div></li>
+   </ol>
+  </div>
+ </div>
+</section>
+
+<!-- ===== CHARACTER ===== -->
+<section id="personaje">
+ <div class="wrap">
+  <div class="sec-head"><span class="n">05</span><h2>Hoja de personaje</h2></div>
+  <div class="sheet">
+   <div>
+    <div class="card3d"><div class="flip" id="flip">
+     <div class="box face">
+      <h3>FICHA</h3>
+      <div class="kv">Nombre <b>Santiago R. J.</b></div>
+      <div class="kv">Clase <b>Ing. de Software</b></div>
+      <div class="kv">Nivel <b>VII semestre</b></div>
+      <div class="kv">Base <b>Medellín</b></div>
+      <div class="kv">Gremio <b>U. Cooperativa</b></div>
+      <div class="kv">Idiomas <b>ES nativo · EN básico</b></div>
+      <div class="kv">Estado <b style="color:var(--verde)">Disponible</b></div>
+     </div>
+     <div class="box face back">
+      <h3>BUSCANDO</h3>
+      <p>Práctica empresarial en <b style="color:var(--amar)">desarrollo full stack</b> o <b style="color:var(--amar)">analítica de datos</b>.</p>
+      <p style="color:var(--suave)">Presencial, híbrida o remota.</p>
+      <a class="btn sm a" href="#guardar" style="margin-top:auto">Hablemos ▶</a>
+     </div>
+    </div></div>
+    <button class="btn sm" id="flipBtn" style="margin-top:16px">↻ Voltear ficha</button>
+   </div>
+   <div>
+    <p class="bio">Me gusta construir cosas que la gente usa: desde un sitio para un cliente real hasta una app para niños que no tienen internet. Aprendo rápido, trabajo bien en equipo y me tomo en serio los tiempos de entrega.</p>
+    <div class="perks">
+     <div class="perk reveal"><b>⚔ Trabajo en party</b><p>Todos mis proyectos son en equipo, con Git y GitHub para coordinar el trabajo.</p></div>
+     <div class="perk reveal"><b>🛡 Integración</b><p>Conecto backend y frontend: APIs en Java y Python consumidas desde JavaScript y Flutter.</p></div>
+     <div class="perk reveal"><b>🔍 Lectura de código</b><p>Entiendo código ajeno antes de cambiarlo, como en el mantenimiento de software.</p></div>
+     <div class="perk reveal"><b>⏱ Autogestión</b><p>Cumplo los tiempos y me organizo solo cuando la misión lo pide.</p></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ===== SAVE / CONTACT ===== -->
+<section id="guardar">
+ <div class="wrap">
+  <div class="sec-head"><span class="n">06</span><h2>Guardar partida</h2><p>¿Tienes una práctica o un proyecto? Escríbeme y seguimos la aventura juntos.</p></div>
+  <div class="box save">
+   <div>
+    <p class="mail" id="mail">santiago.rodriguezj12@gmail.com</p>
+    <div class="cta" style="margin-top:16px">
+     <button class="btn a" id="copy">⧉ Copiar correo</button>
+     <a class="btn" href="mailto:santiago.rodriguezj12@gmail.com">✉ Escribir</a>
+    </div>
+   </div>
+   <div>
+    <div class="slotsave"><div><b>SLOT 1</b><br><span>LinkedIn</span></div><a class="btn sm" href="https://www.linkedin.com/in/santiago12r/">Cargar ▶</a></div>
+    <div class="slotsave"><div><b>SLOT 2</b><br><span>GitHub</span></div><a class="btn sm" href="https://github.com/santiago12R">Cargar ▶</a></div>
+    <div class="slotsave"><div><b>SLOT 3</b><br><span>Hoja de vida (PDF)</span></div><a class="btn sm a" href="https://github.com/santiago12R/santiago12R/raw/main/Santiago_Rodriguez_CV.pdf">Descargar ⬇</a></div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <p class="px">THANKS FOR PLAYING</p>
+  <p>Santiago Rodriguez Jimenez · Medellín, Colombia · 2026</p>
+  <p style="margin-top:16px"><a class="btn sm" href="#top" id="toTop">▲ Continue</a></p>
+ </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><span>🏆</span><span id="toastTxt"></span></div>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// stars
+const st=$('#stars'); for(let i=0;i<40;i++){const e=document.createElement('i');e.style.left=Math.random()*100+'%';e.style.top=Math.random()*100+'%';e.style.animationDelay=(Math.random()*2)+'s';st.appendChild(e);}
+
+// typewriter
+const t=$('#typed'); if(!reduce){const full=t.textContent;t.textContent='';let i=0;const tick=()=>{t.textContent=full.slice(0,++i);if(i<full.length)setTimeout(tick,28);};setTimeout(tick,400);}
+
+// menu
+const mb=$('#menuBtn'),menu=$('#menu'); mb.onclick=()=>{const o=menu.classList.toggle('open');mb.setAttribute('aria-expanded',o);};
+menu.addEventListener('click',e=>{if(e.target.tagName==='A'){menu.classList.remove('open');mb.setAttribute('aria-expanded',false);}});
+
+// active section in HUD
+const links=$$('.hud ul a'); const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id));}}),{rootMargin:'-45% 0px -50% 0px'});
+$$('main section[id]').forEach(s=>io.observe(s));
+
+// reveal
+const rv=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');rv.unobserve(en.target);}}),{threshold:.1});
+$$('.reveal').forEach(e=>rv.observe(e));
+
+// toast
+let tt; const toast=msg=>{$('#toastTxt').textContent=msg;$('#toast').classList.add('show');clearTimeout(tt);tt=setTimeout(()=>$('#toast').classList.remove('show'),2600);};
+
+// quest filters
+const fb=$$('.filters button');
+const setFilter=f=>{fb.forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===f));$$('.quest').forEach(q=>{q.hidden=!(f==='all'||q.dataset.s.split(' ').includes(f));});};
+fb.forEach(b=>b.onclick=()=>setFilter(b.dataset.f));
+$$('.stat[data-filter]').forEach(a=>a.addEventListener('click',()=>setFilter(a.dataset.filter)));
+let opened=new Set();
+$$('details.more').forEach((d,i)=>d.addEventListener('toggle',()=>{if(d.open){opened.add(i);if(opened.size===6)toast('Logro: Leíste todas las misiones');}}));
+
+// inventory
+const INV={
+ 'Front-end':[['HTML','<>','#ff9b6b',['Casa Rendón'],'Estructura de páginas y componentes.'],['CSS','{}','#7dd3fc',['Casa Rendón'],'Estilos y diseño responsive.'],['JavaScript','JS','#ffd84d',['Casa Rendón','BlackJack Royale','Numi Admin'],'Interactividad en el navegador y módulos del juego.'],['React','⚛','#7ee0f0',['Casa Rendón'],'Componentes del sitio de Casa Rendón.'],['Bootstrap','B','#c4a2ff',['Proyectos de clase'],'Maquetación rápida con su sistema de grillas.']],
+ 'Back-end y datos':[['Java','J','#ff6b6b',['CineX'],'Capa de servicios y lógica de negocio.'],['Spring Boot','SB','#7ee08a',['CineX'],'API REST con controladores y servicios.'],['Python','Py','#7dd3fc',['BlackJack Royale','Numi Admin','Estructuras de datos'],'Servidor del juego, backend del panel y ejercicios de clase.'],['Flask','Fl','#f2ecdf',['Numi Admin'],'Backend del panel administrativo.'],['MySQL','DB','#ffa94d',['CineX'],'Base de datos relacional del cine.'],['Firestore','Fs','#ffd84d',['Numi Admin','Numi'],'Datos que la app sincroniza y el panel gestiona.']],
+ 'Móvil':[['Flutter','F','#7dd3fc',['Numi'],'Pantallas, juegos y audio de la app.'],['Dart','D','#5ee6e0',['Numi'],'Lenguaje de la app con arquitectura MVVM.']],
+ 'Hardware':[['Arduino','∞','#5ee6e0',['Gafas de detección','Robot Multi-Bot'],'Sensores, actuadores y un carro a control remoto.']],
+ 'Herramientas':[['Git','⎇','#ff9b6b',['Todos los proyectos'],'Ramas, commits y trabajo en equipo.'],['GitHub','GH','#f2ecdf',['Todos los proyectos'],'Repositorios, colaboración y este portafolio.'],['WebSockets','WS','#c4a2ff',['BlackJack Royale'],'Partidas multijugador en tiempo real.'],['Google Cloud','GC','#7ee08a',['Credenciales'],'Infraestructura, balanceo de carga y entornos de desarrollo.']]
+};
+const box=$('#slots'); let first=null;
+for(const [cat,items] of Object.entries(INV)){
+ const c=document.createElement('div');c.className='cat';c.innerHTML=`<h3>${cat}</h3>`;const g=document.createElement('div');g.className='slots';
+ items.forEach(([n,ic,col,used,desc])=>{const b=document.createElement('button');b.className='slot';b.setAttribute('aria-pressed','false');b.innerHTML=`<span class="ic" style="--c:${col}">${ic}</span>${n}`;
+  b.onclick=()=>{$$('.slot').forEach(s=>s.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');$('#dName').textContent=n;$('#dDesc').textContent=desc;$('#dLbl').hidden=false;$('#dList').innerHTML=used.map(u=>`<li>${u}</li>`).join('');};
+  g.appendChild(b); if(!first) first=b;});
+ c.appendChild(g);box.appendChild(c);
+}
+
+// flip card
+$('#flipBtn').onclick=()=>$('#flip').classList.toggle('on');
+
+// copy email
+$('#copy').onclick=async()=>{try{await navigator.clipboard.writeText('santiago.rodriguezj12@gmail.com');toast('Correo copiado. ¡Partida guardada!');}catch(e){toast('Copia: santiago.rodriguezj12@gmail.com');}};
+
+// character click
+let clicks=0; $('#pj').addEventListener('click',()=>{clicks++;$$('.eye').forEach(e=>{e.setAttribute('height','0.3');setTimeout(()=>e.setAttribute('height','1'),180);});
+ const msgs=['¡Hola! Soy Santiago.','+10 XP por saludar.','Pista: prueba el código Konami ↑↑↓↓←→←→BA'];toast(msgs[Math.min(clicks-1,2)]);});
+
+// konami
+const K=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];let kp=0;
+addEventListener('keydown',e=>{kp=(e.key===K[kp]||e.key.toLowerCase()===K[kp])?kp+1:0;if(kp===K.length){kp=0;document.documentElement.style.setProperty('--amar','#7ee08a');toast('Logro secreto: Modo Konami activado');}});
+
+$('#toTop').onclick=e=>{e.preventDefault();scrollTo({top:0,behavior:reduce?'auto':'smooth'});};
+})();
+</script>
 </body>
 </html>
