@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Santiago Rodriguez Jimenez · Ingeniería de Software</title>
+<meta name="description" content="Portafolio de Santiago Rodriguez Jimenez, estudiante de Ingeniería de Software en Medellín. Full stack y analítica de datos. Buscando práctica empresarial.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><rect width='8' height='8' fill='%230b1120'/><path d='M2 1h4v1H2zM1 2h1v2H1zM2 4h4v1H2zM6 5h1v2H6zM2 7h4v-1H2z' fill='%237dd3fc'/></svg>">
+<style>
+:root{--bg0:#06090f;--bg1:#0b1120;--panel:#0e1525;--panel2:#141d33;--borde:#2a3b5f;--crema:#f5f1ea;--rosa:#a78bfa;--cian:#7dd3fc;--gema:#5ee6e0;--amar:#ffe066;--verde:#7ee08a;--gris:#93a4bf}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg1);color:var(--crema);font-family:ui-monospace,"JetBrains Mono","Cascadia Code",Menlo,Consolas,monospace;line-height:1.6;
+ background-image:radial-gradient(#ffffff14 1px,transparent 1px);background-size:28px 28px}
+a{color:var(--cian);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:5;background:#0b1120e6;backdrop-filter:blur(6px);border-bottom:2px solid var(--borde)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav b{color:var(--cian)}
+nav ul{display:flex;gap:18px;list-style:none;font-size:14px}
+nav ul a{color:var(--gris)}
+header{padding:80px 0 56px}
+.hello{color:var(--gema);font-size:14px;margin-bottom:10px}
+h1{font-size:clamp(30px,6vw,52px);line-height:1.1;letter-spacing:-1px}
+h1 span{display:block;width:fit-content;border-bottom:6px solid var(--rosa);padding-bottom:6px}
+.role{color:var(--rosa);font-size:clamp(16px,2.4vw,21px);margin-top:16px}
+.lead{color:var(--gris);max-width:640px;margin-top:18px}
+.lead em{color:var(--crema);font-style:normal}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:6px 12px;border:2px solid var(--verde);color:var(--verde);font-size:13px}
+.status:before{content:"";width:8px;height:8px;background:var(--verde);animation:blink 1.2s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:10px 18px;border:2px solid var(--borde);background:var(--panel2);color:var(--crema);font-weight:700;font-size:14px;box-shadow:4px 4px 0 var(--bg0);transition:transform .08s}
+.btn:hover{text-decoration:none;transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--bg0)}
+.btn.main{background:var(--rosa);border-color:var(--rosa);color:var(--bg0)}
+section{padding:56px 0;border-top:2px dashed var(--borde)}
+h2{font-size:22px;margin-bottom:26px;color:var(--crema)}
+h2:before{content:"> ";color:var(--gema)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--panel);border:2px solid var(--borde);padding:20px;box-shadow:6px 6px 0 var(--bg0);display:flex;flex-direction:column}
+.card h3{font-size:17px;color:var(--crema)}
+.tag{font-size:12px;color:var(--amar);margin:2px 0 10px}
+.card p{color:var(--gris);font-size:14px}
+.card .chips{margin-top:auto;padding-top:12px}
+.card .rol{color:var(--crema);margin-top:10px;font-size:13px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chip{font-size:11px;padding:2px 8px;border:1px solid var(--borde);color:var(--cian);background:var(--panel2)}
+.links{display:flex;gap:14px;margin-top:14px;font-size:13px}
+.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.stack>div{background:var(--panel);border:2px solid var(--borde);padding:16px}
+.stack h3{font-size:13px;color:var(--amar);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.cert{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.cert a{display:block;background:var(--panel);border:2px solid var(--borde);padding:12px 14px;color:var(--crema);font-size:14px}
+.cert a small{display:block;color:var(--gris);font-size:12px}
+.cert a:hover{border-color:var(--cian);text-decoration:none}
+.edu{background:var(--panel);border:2px solid var(--borde);padding:20px}
+.edu b{color:var(--crema)}.edu p{color:var(--gris);font-size:14px}
+footer{padding:48px 0 60px;border-top:2px dashed var(--borde);text-align:center;color:var(--gris);font-size:14px}
+footer .btns{justify-content:center}
+@media(max-width:640px){nav ul{display:none}header{padding:56px 0 40px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>santiago12R</b>
+ <ul><li><a href="#proyectos">Proyectos</a></li><li><a href="#stack">Stack</a></li><li><a href="#certificaciones">Certificaciones</a></li><li><a href="#contacto">Contacto</a></li></ul></div></nav>
+
+<header><div class="wrap">
+ <p class="hello">$ whoami</p>
+ <h1><span>Santiago Rodriguez Jimenez</span></h1>
+ <p class="role">Ingeniería de Software · Full Stack &amp; Datos</p>
+ <p class="lead">Estudiante de <em>VII semestre</em> en la Universidad Cooperativa de Colombia, en Medellín. Construyo sitios web con <em>HTML, CSS, JavaScript y React</em>, apps móviles con <em>Flutter</em> y backends con <em>Java, Spring Boot y Python</em>, siempre trabajando en equipo.</p>
+ <p class="status">Disponible para práctica empresarial · presencial, híbrida o remota</p>
+ <div class="btns">
+  <a class="btn main" href="https://github.com/santiago12R/santiago12R/raw/main/Santiago_Rodriguez_CV.pdf">Hoja de vida · PDF</a>
+  <a class="btn" href="https://www.linkedin.com/in/santiago12r/">LinkedIn</a>
+  <a class="btn" href="https://github.com/santiago12R">GitHub</a>
+  <a class="btn" href="mailto:santiago.rodriguezj12@gmail.com">Correo</a>
+ </div>
+</div></header>
+
+<section id="proyectos"><div class="wrap">
+ <h2>Proyectos</h2>
+ <div class="grid">
+  <article class="card"><h3>Casa Rendón</h3><p class="tag">Cliente real · en producción · 2026</p>
+   <p>Sitio web de una marca de café y vino de Andes, Antioquia: 7 secciones y reservas por WhatsApp.</p>
+   <p class="rol">Mi rol: maquetación, interactividad y componentes en React.</p>
+   <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">React</span></div>
+   <div class="links"><a href="https://casarendon.com">Ver sitio ↗</a><a href="https://github.com/AlexanderM-Code/Entre-sorbos---Casa-Rendon">Código</a></div></article>
+
+  <article class="card"><h3>Numi</h3><p class="tag">App educativa · en desarrollo · 2026</p>
+   <p>App para niños de primaria de zonas rurales de Medellín: 15 actividades en 5 materias y funcionamiento sin internet.</p>
+   <p class="rol">Mi rol: pantallas, diseño responsive, juegos interactivos y documentación.</p>
+   <div class="chips"><span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">MVVM</span></div>
+   <div class="links"><a href="https://github.com/geminitodo5-sketch/app-educativa-medellin">Código</a></div></article>
+
+  <article class="card"><h3>BlackJack Royale</h3><p class="tag">Casino web multijugador · 2025</p>
+   <p>Modo contra la máquina y multijugador en tiempo real por WebSockets, con 6 módulos de JavaScript y servidor en Python.</p>
+   <p class="rol">Mi rol: front-end y servidor.</p>
+   <div class="chips"><span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">WebSockets</span></div>
+   <div class="links"><a href="https://luism7p7.github.io/BlackJack/Casino/public/">Jugar ↗</a><a href="https://github.com/luism7p7/BlackJack">Código</a></div></article>
+
+  <article class="card"><h3>CineX</h3><p class="tag">API REST · 2025</p>
+   <p>API REST para gestionar un cine, con 8 clases de servicio.</p>
+   <p class="rol">Mi rol: capa de servicios con la lógica de negocio.</p>
+   <div class="chips"><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">MySQL</span></div>
+   <div class="links"><a href="https://github.com/AlexanderM-Code/CineX-Backend">Código</a></div></article>
+
+  <article class="card"><h3>Gafas de detección de proximidad</h3><p class="tag">Arduino · proyecto final · 2025</p>
+   <p>Gafas que detectan obstáculos con un sensor ultrasónico y avisan con alertas sonoras, como apoyo a personas con limitación visual.</p>
+   <p class="rol">Proyecto en pareja de Computación Ubicua, junto con laboratorios de sensores y un carro robot.</p>
+   <div class="chips"><span class="chip">Arduino</span><span class="chip">C/C++</span><span class="chip">Sensores</span></div>
+   <div class="links"><a href="https://youtu.be/G-rosUWGhHM">Video ↗</a><a href="https://github.com/santiago12R/Computacion-ubicua">Código</a></div></article>
+
+  <article class="card"><h3>Numi Admin</h3><p class="tag">Panel web · en desarrollo · 2026</p>
+   <p>Panel para que administradores y coordinadores gestionen usuarios, contenido educativo y el progreso de los estudiantes de Numi, sobre Firestore.</p>
+   <p class="rol">Proyecto integrador de Desarrollo Web Full Stack.</p>
+   <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">JavaScript</span><span class="chip">Firestore</span></div></article>
+ </div>
+</div></section>
+
+<section id="stack"><div class="wrap">
+ <h2>Stack</h2>
+ <div class="stack">
+  <div><h3>Front-end</h3><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">React</span><span class="chip">Bootstrap</span></div></div>
+  <div><h3>Back-end y datos</h3><div class="chips"><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">MySQL</span><span class="chip">API REST</span></div></div>
+  <div><h3>Móvil</h3><div class="chips"><span class="chip">Flutter</span><span class="chip">Dart</span></div></div>
+  <div><h3>Herramientas</h3><div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span><span class="chip">Postman</span><span class="chip">Docker</span><span class="chip">Google Cloud</span></div></div>
+ </div>
+</div></section>
+
+<section id="certificaciones"><div class="wrap">
+ <h2>Certificaciones</h2>
+ <div class="cert">
+  <a href="https://github.com/santiago12R/santiago12R/blob/main/assets/certificados/hacker-etico-cisco.pdf">Hacker ético<small>Cisco Networking Academy · nov 2026</small></a>
+  <a href="https://www.skills.google/public_profiles/d2cda74b-8293-4ec6-94de-48ceadedb950/badges/23162887">Cloud Computing Fundamentals<small>Google Cloud Skills Boost</small></a>
+  <a href="https://www.skills.google/public_profiles/d2cda74b-8293-4ec6-94de-48ceadedb950/badges/23588126">Infrastructure in Google Cloud<small>Google Cloud Skills Boost</small></a>
+  <a href="https://www.skills.google/public_profiles/d2cda74b-8293-4ec6-94de-48ceadedb950/badges/23233254">Cloud Load Balancing<small>Google Cloud Skills Boost</small></a>
+  <a href="https://www.skills.google/public_profiles/d2cda74b-8293-4ec6-94de-48ceadedb950/badges/23629566">Set Up an App Dev Environment on Google Cloud<small>Google Cloud Skills Boost</small></a>
+ </div>
+</div></section>
+
+<section id="educacion"><div class="wrap">
+ <h2>Educación</h2>
+ <div class="edu"><b>Universidad Cooperativa de Colombia</b><p>Ingeniería de Software · 2023 – actualidad (VII semestre) · Medellín</p></div>
+</div></section>
+
+<footer id="contacto"><div class="wrap">
+ <p>¿Tienes una práctica o un proyecto en mente? Escríbeme.</p>
+ <div class="btns">
+  <a class="btn main" href="mailto:santiago.rodriguezj12@gmail.com">santiago.rodriguezj12@gmail.com</a>
+  <a class="btn" href="https://www.linkedin.com/in/santiago12r/">LinkedIn</a>
+  <a class="btn" href="https://github.com/santiago12R">GitHub</a>
+ </div>
+ <p style="margin-top:28px;font-size:12px">© 2026 Santiago Rodriguez Jimenez · Medellín, Colombia</p>
+</div></footer>
+</body>
+</html>
